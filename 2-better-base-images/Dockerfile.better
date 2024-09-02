@@ -1,0 +1,3 @@
+FROM ruby:3.3.4-alpine
+
+CMD ["ruby", "--version"]
