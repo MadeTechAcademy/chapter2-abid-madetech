@@ -8,6 +8,3 @@ Original with updated rakefile; layers from cache: 10
 
 Better build layers: 25
 Better build; layers from cache: 8
-
-
-
