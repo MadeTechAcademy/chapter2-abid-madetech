@@ -6,11 +6,28 @@ Commit your answers to these questions in your copy
 Answer these after a day or two to see how much you remember
 
 1. What principle(s) can we apply to improve the size of images?
+- Use smaller base images (e.g., alpine)
+- Minimize the number of layers in Dockerfiles
+- Remove unnecessary files and dependencies
+
 1. What principle(s) can we apply to speed up rebuilds of images locally?
+- order the commands in the dockerfile so that the least changing commands come first. This allows us to leverage the caching mechanism better.
+- Reduce layers by combining related commands such as: RUN apt-get update && apt-get install
+
 1. What principles can we apply to speed up builds of an image in a pipeline?
+- Multi-stage builds
+
 1. What are examples of artefacts, files or values we would not want to have baked into a shipped image used in production and why?
+- Secrets such as API keys, PATs, passwords etc
+- Files holding development dependencies
+
 1. What principles can we apply to avoid this?
+- Exclude unnecessary files such as dockerfiles, tests (if they are not needed in prod)
+- multi-stage builds to separate development and production stages
+- environment vairables and secret management tools for secret keys
+  
 1. Which exercise had the biggest impact on the image quality and why?
+- Probably multi stage builds as they allow you to build dependencies in one stage and copy of what is necessary into the final image. This allows it to be leaner and faster.
 
 ## Part 2
 Answer these after some reflection on your delivery
