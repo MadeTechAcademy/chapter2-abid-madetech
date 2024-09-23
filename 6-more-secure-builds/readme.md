@@ -16,7 +16,7 @@ We can also create stages in our dockerfiles. Earlier stages and their layers ar
 
 ## Exercise
 
-- Attempt to build the image using the original file. PS This is expected to fail. `docker build -t docker-deep-divd/ex6/original -f Dockerfile.original --progress=plain .`
+- Attempt to build the image using the original file. PS This is expected to fail. `docker build -t docker-deep-dive/ex6/original -f Dockerfile.original --progress=plain .`
 - Create a better dockerfile that uses build arguments and environment variables to get the build to work `docker build -t docker-deep-divd/ex6/better -f Dockerfile.better --progress=plain --build-arg TOKEN=your-pat-token .`
 - Run it to check it works `docker run --rm docker-deep-divd/ex6/better`
 - Check the layers of the baked image by running `docker history docker-deep-divd/ex6/better`
